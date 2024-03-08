@@ -1,6 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
 
-</beans>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.repository.LectureApplicantsMapper">
+    <insert id="registerLectureApplicants" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO lecture_applicants (lecture_course_id, student_id)
+        VALUES (#{lectureCourseId}, #{studentId})
+    </insert>
+
+    <select id="countApplicants" resultType="int">
+        SELECT COUNT(*)
+        FROM lecture_applicants
+        WHERE lecture_course_id = #{lectureCourseId}
+    </select>
+
+    <select id="isLectureAlreadyRegistered" resultType="int">
+        SELECT EXISTS (
+                       SELECT 1
+                       FROM lecture_applicants
+                       WHERE lecture_course_id = #{lectureCourseId} AND student_id = #{studentId}
+                   )
+    </select>
+
+</mapper>

@@ -1,6 +1,6 @@
-package com.example.jpapractice.controller;
+package org.example.controller;
 
-import com.example.jpapractice.repository.StudentJdbcRepository;
+import org.example.repository.StudentJdbcRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

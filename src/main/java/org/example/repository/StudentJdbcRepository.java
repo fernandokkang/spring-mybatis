@@ -1,4 +1,4 @@
-package com.example.jpapractice.repository;
+package org.example.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

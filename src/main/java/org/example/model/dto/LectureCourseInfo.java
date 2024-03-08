@@ -1,4 +1,4 @@
-package com.example.jpapractice.model.dto;
+package org.example.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;

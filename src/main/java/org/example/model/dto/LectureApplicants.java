@@ -1,2 +1,17 @@
-package org.example.model.dto;public class LectureApplicants {
+package org.example.model.dto;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@RequiredArgsConstructor
+public class LectureApplicants {
+
+    private long id;
+    private long lectureCourseId;
+    private long studentId;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
